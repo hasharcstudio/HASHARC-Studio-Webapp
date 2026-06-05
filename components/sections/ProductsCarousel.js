@@ -36,7 +36,7 @@ export default function ProductsCarousel() {
   useEffect(() => {
     stopAuto()
     if (paused) return undefined
-    const delay = prefersReducedMotion ? 7000 : 3800
+    const delay = prefersReducedMotion ? 10000 : 7000
     autoRef.current = setInterval(() => {
       setIndex((i) => (i + 1) % products.length)
     }, delay)
@@ -65,7 +65,7 @@ export default function ProductsCarousel() {
     dirRef.current = setInterval(() => {
       if (direction === 'next') next()
       else prev()
-    }, prefersReducedMotion ? 1200 : 750)
+    }, prefersReducedMotion ? 1500 : 1000)
   }
 
   const handleMouseEnter = () => {
@@ -165,7 +165,7 @@ export default function ProductsCarousel() {
                     rel="noreferrer"
                     className={`group block overflow-hidden rounded-2xl border border-white/10 bg-black/40 shadow-2xl ${transitionClass} hover:-translate-y-1 hover:shadow-[0_30px_100px_rgba(0,0,0,0.55)]`}
                   >
-                    <div className="relative h-[250px] sm:h-[340px] md:h-[460px] overflow-hidden">
+                    <div className="relative h-[320px] sm:h-[420px] md:h-[560px] overflow-hidden">
                       <div
                         className="absolute inset-0"
                         style={{ transform: `translateX(${dragOffset * 0.05}px)` }}
@@ -175,7 +175,7 @@ export default function ProductsCarousel() {
                           alt={product.alt}
                           fill
                           priority={i === 0}
-                          sizes="(max-width: 768px) 100vw, 1100px"
+                          sizes="(max-width: 1100px) 100vw, 1100px"
                           className="object-cover scale-110 blur-xl opacity-45"
                         />
                         <Image
@@ -183,7 +183,7 @@ export default function ProductsCarousel() {
                           alt={product.alt}
                           fill
                           priority={i === index}
-                          sizes="(max-width: 768px) 100vw, 1100px"
+                          sizes="(max-width: 1100px) 100vw, 1100px"
                           onLoadingComplete={() => setLoaded((s) => ({ ...s, [product.id]: true }))}
                           className={`object-cover transition-all ${transitionClass} ${loaded[product.id] ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.02]'}`}
                           style={{ objectFit: 'contain', objectPosition: 'center' }}
