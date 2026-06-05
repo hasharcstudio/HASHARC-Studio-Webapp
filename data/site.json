@@ -1,0 +1,46 @@
+{
+  "navLinks": [
+    { "label": "Home", "href": "#home" },
+    { "label": "Services", "href": "#services", "dropdown": true },
+    { "label": "Review", "href": "#reviews" },
+    { "label": "Process", "href": "#process" }
+  ],
+  "servicesList": [
+    "Web Development",
+    "Maintenance & Support",
+    "UI/UX Design",
+    "Poster Design",
+    "Logo Design"
+  ],
+  "socialLinks": [
+    { "href": "https://www.facebook.com/profile.php?id=61588603034519", "icon": "/icons/facebook.svg", "label": "Facebook" },
+    { "href": "https://www.instagram.com/hasharcstudio/?hl=en", "icon": "/icons/instagram.svg", "label": "Instagram" },
+    { "href": "https://www.linkedin.com/company/112744937/admin/dashboard/", "icon": "/icons/linkedin.svg", "label": "LinkedIn" }
+  ],
+  "contactInfo": {
+    "phone": "+880 1618-609839",
+    "email": "hasharcstudio@gmail.com",
+    "availability": "24/7"
+  },
+  "hero": {
+    "socialProof": "Loved by 500+ Businesses worldwide.",
+    "socialProofSub": "Our Clients Speak for Us"
+  },
+  "footer": {
+    "companyName": "Hasharc Studio",
+    "office": {
+      "address": ["Journalist Residential Area", "Mirpur-11, Dhaka-1216 || Bangladesh"],
+      "email": "HasharcStudio@gmail.com",
+      "phone": "+880 1618-609839"
+    },
+    "links": ["Home", "About Us", "Contact"],
+    "socialLinks": [
+      { "href": "https://www.facebook.com/profile.php?id=61588603034519", "icon": "/icons/facebook.svg", "label": "Facebook" },
+      { "href": "https://twitter.com/hasharcstudio", "icon": "/icons/twitter.svg", "label": "Twitter" },
+      { "href": "https://www.instagram.com/hasharcstudio/?hl=en", "icon": "/icons/instagram.svg", "label": "Instagram" },
+      { "href": "https://www.linkedin.com/company/112744937/admin/dashboard/", "icon": "/icons/linkedin.svg", "label": "LinkedIn" },
+      { "href": "https://www.youtube.com/channel/UCn8f5d4l4q2v9z9p8r7s6t1u0", "icon": "/icons/youtube.svg", "label": "YouTube" },
+      { "href": "https://discord.gg/hasharcstudio", "icon": "/icons/discord.svg", "label": "Discord" }
+    ]
+  }
+}

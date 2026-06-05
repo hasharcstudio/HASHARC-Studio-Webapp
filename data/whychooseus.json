@@ -1,0 +1,30 @@
+{
+  "hasharc": {
+    "title": "Hasharc Studio",
+    "items": [
+      "Dedicated expert team for every project",
+      "Results-driven approach with measurable outcomes",
+      "Pixel-perfect designs with modern UI/UX standards",
+      "Fast delivery with clear timelines",
+      "Transparent pricing, no hidden costs",
+      "24/7 support and ongoing maintenance",
+      "Mobile-first, fully responsive development"
+    ],
+    "bonuses": [
+      "Free project consultation",
+      "Post-launch support & bug fixes"
+    ]
+  },
+  "others": {
+    "title": "Other Agencies",
+    "items": [
+      "Unreliable freelancers with slow turnarounds",
+      "Designs that fail to convert or perform",
+      "Weak attention to responsive design",
+      "Missed deadlines and scope creep",
+      "Hidden fees and surprise charges",
+      "Limited revisions with no client-focused approach",
+      "Guesswork instead of data-driven decisions"
+    ]
+  }
+}

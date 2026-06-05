@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Sarah Mitchell",
+    "role": "CEO, TechForge",
+    "image": "/Images/client 1.jpg",
+    "rating": 5,
+    "text": "Hasharc Studio completely transformed our online presence. The attention to detail and performance optimization was outstanding."
+  },
+  {
+    "name": "Daniel Park",
+    "role": "Founder, GreenLeaf",
+    "image": "/Images/client 2.jpg",
+    "rating": 5,
+    "text": "Their UI/UX design process was incredibly thorough. Our conversion rates jumped 40% after the redesign. Truly world-class work."
+  },
+  {
+    "name": "Amira Johnson",
+    "role": "Marketing Director, Nova",
+    "image": "/Images/client 3.jpg",
+    "rating": 5,
+    "text": "From branding to web development, they delivered everything on time with exceptional quality. A reliable partner for any digital project."
+  },
+  {
+    "name": "Liam Chen",
+    "role": "CTO, CloudSync",
+    "image": "/Images/client 4.jpg",
+    "rating": 5,
+    "text": "The maintenance and support team is phenomenal. Zero downtime since we onboarded. They handle everything so we can focus on growth."
+  },
+  {
+    "name": "Priya Sharma",
+    "role": "Brand Manager, Luxe Co.",
+    "image": "/Images/client 5.jpg",
+    "rating": 5,
+    "text": "The logo and poster designs they created for us perfectly capture our brand essence. Creative, bold, and always on point."
+  },
+  {
+    "name": "Marcus Williams",
+    "role": "Product Lead, Orbit",
+    "image": "/Images/client 6.jpg",
+    "rating": 5,
+    "text": "Exceptional development skills paired with real design sensibility. They don't just build, they craft experiences that users love."
+  }
+]

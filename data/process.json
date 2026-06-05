@@ -1,0 +1,32 @@
+[
+  {
+    "number": "01",
+    "title": "Discovery",
+    "description": "We dive deep into your goals, audience, and vision to build a solid project foundation.",
+    "iconId": "search"
+  },
+  {
+    "number": "02",
+    "title": "Design",
+    "description": "Crafting wireframes and pixel-perfect mockups that capture your brand identity.",
+    "iconId": "pencil"
+  },
+  {
+    "number": "03",
+    "title": "Development",
+    "description": "Building with clean, scalable code using the latest frameworks and best practices.",
+    "iconId": "code"
+  },
+  {
+    "number": "04",
+    "title": "Testing",
+    "description": "Rigorous quality assurance across all devices to ensure a flawless experience.",
+    "iconId": "shield"
+  },
+  {
+    "number": "05",
+    "title": "Launch",
+    "description": "Deploying your project live with ongoing support to ensure smooth sailing.",
+    "iconId": "rocket"
+  }
+]

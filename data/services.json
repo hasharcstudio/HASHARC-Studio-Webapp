@@ -1,0 +1,62 @@
+[
+  {
+    "id": "web-development",
+    "title": "Web Development",
+    "description": "Build unique, high-performance websites tailored to your business needs and goals.",
+    "features": [
+      "Frontend & Backend Development",
+      "Responsive Design",
+      "API Development & Integration",
+      "Custom Functionality"
+    ],
+    "iconId": "web-development"
+  },
+  {
+    "id": "maintenance-support",
+    "title": "Maintenance & Support",
+    "description": "End-to-end care to keep your websites, apps, and servers secure, fast, and reliable.",
+    "features": [
+      "Server Setup & Configuration",
+      "Continuous Monitoring & Security Updates",
+      "Backup, Recovery & Performance Optimization",
+      "Reliable Technical Support"
+    ],
+    "iconId": "maintenance-support"
+  },
+  {
+    "id": "ui-ux-design",
+    "title": "UI/UX Design",
+    "description": "Create intuitive, beautiful user interfaces and seamless experiences that delight your users.",
+    "features": [
+      "Wireframing & Prototyping",
+      "User Research & Testing",
+      "Interaction Design",
+      "Design Systems"
+    ],
+    "iconId": "ui-ux-design"
+  },
+  {
+    "id": "poster-design",
+    "title": "Poster Design",
+    "description": "Eye-catching poster designs that communicate your message with impact and creativity.",
+    "features": [
+      "Event & Promotional Posters",
+      "Social Media Graphics",
+      "Print-Ready Designs",
+      "Creative Visual Concepts"
+    ],
+    "iconId": "poster-design"
+  },
+  {
+    "id": "logo-design",
+    "title": "Logo Design",
+    "description": "Distinctive, memorable logos that define your brand identity and leave a lasting impression.",
+    "features": [
+      "Custom Logo Concepts",
+      "Brand Identity Design",
+      "Vector & Scalable Formats",
+      "Brand Guidelines"
+    ],
+    "iconId": "logo-design"
+  }
+]
