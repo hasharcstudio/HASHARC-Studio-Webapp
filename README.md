@@ -12,11 +12,11 @@ A modern, high-performance landing page for **Hasharc Studio** built with Next.j
 
 ## Project Structure
 
-```
+```text
 app/                  → Pages, layouts, API routes, error boundaries
 components/
   layout/             → Navbar, Footer, SmoothScroll
-  sections/           → Hero, Services, Reviews, Process, WhyChooseUs, Contact, etc.
+  sections/           → Hero, Services, ProductsCarousel, Reviews, Process, WhyChooseUs, Contact, etc.
   ui/                 → Reusable UI components (buttons)
 data/                 → JSON data files (services, reviews, process, site config)
 public/               → Static assets (images, icons, logos, videos)
@@ -81,6 +81,18 @@ Content is managed through JSON files in `/data` for easy editing without touchi
 - **`reviews.json`** — Client testimonials
 - **`process.json`** — "How We Work" timeline steps
 - **`whychooseus.json`** — Comparison data (Hasharc vs others)
+
+## Featured Products Carousel
+
+The homepage now includes a products carousel between **Services** and **Reviews**.
+
+- Auto-rotates smoothly
+- Supports hover/arrow navigation
+- Supports swipe/drag on touch and mouse devices
+- Includes thumbnail previews and clickable cards
+- Opens each product in a new tab
+
+Product images are stored in `public/web_product/`.
 
 ## Deployment
 

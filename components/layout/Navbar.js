@@ -60,6 +60,8 @@ export default function Navbar() {
                                     </ul>
                                 </li>
 
+                                <li><Link href="#products" className="hover:text-green-700 transition-colors duration-300">Products</Link></li>
+
                                 <li><Link href="#reviews" className="hover:text-green-700 transition-colors duration-300">Review</Link></li>
                                 <li><Link href="#process" className="hover:text-green-700 transition-colors duration-300">Process</Link></li>
                             </ul>
@@ -122,6 +124,11 @@ export default function Navbar() {
                                         </li>
                                     ))}
                                 </ul>
+                            </li>
+                            <li>
+                                <Link href="#products" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-white/10 hover:text-green-400 transition-colors duration-200">
+                                    Products
+                                </Link>
                             </li>
                             <li>
                                 <Link href="#reviews" onClick={closeMenu} className="block py-3 px-2 rounded-lg hover:bg-white/10 hover:text-green-400 transition-colors duration-200">
