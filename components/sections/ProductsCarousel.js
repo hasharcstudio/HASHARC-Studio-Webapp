@@ -18,6 +18,9 @@ export default function ProductsCarousel() {
   const dirRef = useRef(null)
   const containerRef = useRef(null)
   const drag = useRef({ startX: 0, dx: 0, dragging: false })
+  const [loaded, setLoaded] = useState({})
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const motionFast = prefersReducedMotion ? 250 : 900
 
   useEffect(() => {
     startAuto()
@@ -29,6 +32,17 @@ export default function ProductsCarousel() {
   }, [paused])
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+      setPrefersReducedMotion(mq.matches)
+      const handler = (e) => setPrefersReducedMotion(e.matches)
+      mq.addEventListener?.('change', handler)
+      return () => mq.removeEventListener?.('change', handler)
+    }
+    return undefined
+  }, [])
+
+  useEffect(() => {
     // keep index within bounds
     if (index < 0) setIndex(products.length - 1)
     if (index >= products.length) setIndex(0)
@@ -38,9 +52,10 @@ export default function ProductsCarousel() {
   const startAuto = () => {
     stopAuto()
     if (paused) return
+    const delay = prefersReducedMotion ? 6000 : 3800
     autoRef.current = setInterval(() => {
       setIndex((i) => (i + 1) % products.length)
-    }, 3800)
+    }, delay)
   }
 
   const stopAuto = () => {
@@ -141,10 +156,27 @@ export default function ProductsCarousel() {
                   href={p.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="block w-full max-w-3xl rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/5 transform hover:scale-[1.03] transition-all duration-700"
+                  className={`block w-full max-w-3xl rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/5 transform transition-all ${prefersReducedMotion ? 'duration-200' : 'duration-700'}`}
                 >
-                  <div className="relative w-full h-64 bg-gray-900">
-                    <Image src={p.src} alt={p.alt} fill sizes="(max-width: 768px) 100vw, 800px" style={{ objectFit: 'cover' }} priority={false} />
+                  <div className="relative w-full h-64 bg-gray-900 overflow-hidden">
+                    <div
+                      className="absolute inset-0 will-change-transform"
+                      style={{
+                        transform: `translateX(${dragOffset * 0.05}px)`,
+                        transition: drag.current.dragging ? 'none' : `transform ${motionFast}ms cubic-bezier(0.22,0.9,0.38,1.0)`,
+                      }}
+                    >
+                      <Image
+                        src={p.src}
+                        alt={p.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 800px"
+                        style={{ objectFit: 'cover' }}
+                        onLoadingComplete={() => setLoaded((s) => ({ ...s, [p.id]: true }))}
+                        className={`${loaded[p.id] ? 'opacity-100 blur-0 scale-100' : 'opacity-0 blur-md scale-105'} transition-all ${prefersReducedMotion ? 'duration-150' : 'duration-700'}`}
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
                   </div>
                   <div className="p-4 bg-gradient-to-r from-white/3 to-transparent">
                     <h3 className="text-lg text-white font-semibold">{p.alt}</h3>
@@ -152,6 +184,28 @@ export default function ProductsCarousel() {
                 </a>
               </div>
             ))}
+              <div className="flex gap-2">
+                {products.map((p, i) => (
+                  <button
+                    key={`thumb-${p.id}`}
+                    onClick={() => setIndex(i)}
+                    className={`p-0.5 rounded-md ring-1 ring-white/5 ${i === index ? 'ring-emerald-400' : 'ring-transparent'}`}
+                  >
+                    <div className="w-20 h-12 relative overflow-hidden rounded-sm">
+                      <Image
+                        src={p.src}
+                        alt={p.alt}
+                        fill
+                        sizes="80px"
+                        style={{ objectFit: 'cover' }}
+                        onLoadingComplete={() => setLoaded((s) => ({ ...s, [`t_${p.id}`]: true }))}
+                        className={`${loaded[`t_${p.id}`] ? 'opacity-100' : 'opacity-60 blur-sm'} transition-all ${prefersReducedMotion ? 'duration-150' : 'duration-400'}`}
+                      />
+                    </div>
+                    <div className="mt-1 text-xs text-white/80 text-center hidden sm:block w-20 truncate">{p.alt}</div>
+                  </button>
+                ))}
+              </div>
           </div>
 
           {/* Left hover/click area */}
