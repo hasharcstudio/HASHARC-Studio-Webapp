@@ -7,6 +7,9 @@ const Services = dynamic(() => import("@/components/sections/Services"), {
 const Reviews = dynamic(() => import("@/components/sections/Reviews"), {
   loading: () => <div className="min-h-screen bg-black" />,
 });
+const ProductsCarousel = dynamic(() => import("@/components/sections/ProductsCarousel"), {
+  loading: () => <div className="min-h-screen bg-black" />,
+});
 const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"), {
   loading: () => <div className="min-h-[600px] bg-black" />,
 });
@@ -23,6 +26,7 @@ export default function Home() {
       
       <Hero />
       <Services />
+      <ProductsCarousel />
       <Reviews />
       <WhyChooseUs />
       <Process />
