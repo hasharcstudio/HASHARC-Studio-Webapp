@@ -186,7 +186,7 @@ export default function ProductsCarousel() {
                           sizes="(max-width: 768px) 100vw, 1100px"
                           onLoadingComplete={() => setLoaded((s) => ({ ...s, [product.id]: true }))}
                           className={`object-cover transition-all ${transitionClass} ${loaded[product.id] ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.02]'}`}
-                          style={{ objectPosition: 'center top' }}
+                          style={{ objectFit: 'contain', objectPosition: 'center' }}
                         />
                       </div>
 
