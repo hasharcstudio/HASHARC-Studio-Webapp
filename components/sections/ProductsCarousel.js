@@ -12,7 +12,7 @@ const showcaseCards = [
     description: 'Minimal editorial storytelling with neon emerald and warm orange accents.',
     src: '/web_product/pass-op-wine.png',
     href: 'https://pass-op-wine.vercel.app/',
-    aspectClass: 'aspect-[4/5]',
+    aspectClass: 'aspect-[16/9]',
     accentClass: 'from-emerald-400/20 via-emerald-400/08 to-transparent',
   },
   {
@@ -23,7 +23,7 @@ const showcaseCards = [
     src: '/web_product/kit-drop-01.png',
     href: 'https://kit-drop-01.vercel.app/',
     widthClass: 'min-w-[280px] sm:min-w-[320px] lg:min-w-[340px]',
-    aspectClass: 'aspect-[4/5]',
+    aspectClass: 'aspect-[16/9]',
     accentClass: 'from-cyan-500/20 via-sky-500/10 to-transparent',
   },
   {
@@ -33,7 +33,7 @@ const showcaseCards = [
     description: 'The anchor screen: compact widgets and a polished control-room feel.',
     src: '/web_product/laundry-manager-rosy.png',
     href: 'https://laundry-manager-rosy.vercel.app/',
-    aspectClass: 'aspect-[16/10]',
+    aspectClass: 'aspect-[16/9]',
     accentClass: 'from-emerald-300/18 via-emerald-400/08 to-transparent',
     featured: true,
   },
@@ -44,7 +44,7 @@ const showcaseCards = [
     description: 'Clean rental-platform framing with strong contrast and a premium systemized layout.',
     src: '/web_product/rentivo-six.png',
     href: 'https://rentivo-six.vercel.app/',
-    aspectClass: 'aspect-[4/5]',
+    aspectClass: 'aspect-[16/9]',
     accentClass: 'from-orange-500/18 via-amber-500/08 to-transparent',
   },
 ]
@@ -53,9 +53,10 @@ const marqueeCards = [...showcaseCards, ...showcaseCards]
 
 function ShowcaseCard({ card, priority }) {
   // Use smaller fixed min-widths on phones so items are easier to identify
+  // Phone: compact; sm/lg: wider so images occupy more horizontal space
   const sizeClasses = card.featured
-    ? 'min-w-[220px] sm:min-w-[480px] lg:min-w-[560px]'
-    : 'min-w-[160px] sm:min-w-[320px] lg:min-w-[340px]'
+    ? 'min-w-[220px] sm:min-w-[560px] lg:min-w-[720px]'
+    : 'min-w-[160px] sm:min-w-[360px] lg:min-w-[420px]'
   return (
     <a
       href={card.href}
@@ -73,8 +74,8 @@ function ShowcaseCard({ card, priority }) {
             alt={card.title}
             fill
             priority={priority}
-            sizes={card.featured ? '(max-width: 1024px) 100vw, 44vw' : '(max-width: 1024px) 100vw, 26vw'}
-            className={`object-cover object-top transition duration-700 group-hover:scale-[1.05] ${card.featured ? 'brightness-[1.03] contrast-[1.02]' : 'brightness-[0.95] contrast-[1.05]'}`}
+            sizes={card.featured ? '(max-width: 1024px) 100vw, 56vw' : '(max-width: 1024px) 100vw, 36vw'}
+            className={`object-cover object-center transition duration-500 group-hover:scale-[1.03] ${card.featured ? 'brightness-[1.03] contrast-[1.02]' : 'brightness-[0.98] contrast-[1.02]'}`}
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
@@ -88,12 +89,12 @@ function ShowcaseCard({ card, priority }) {
           </div>
         </div>
 
-        <div className="border-t border-white/10 bg-black/70 px-4 py-4">
+        <div className="border-t border-white/10 bg-black/70 px-3 py-2">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-[10px] uppercase tracking-[0.38em] text-slate-400">{card.type}</p>
-              <h3 className="mt-2 text-lg font-semibold tracking-tight text-white sm:text-xl">{card.title}</h3>
-              <p className="mt-1 text-sm leading-6 text-slate-300">{card.description}</p>
+              <h3 className="mt-1 text-base font-semibold tracking-tight text-white sm:text-lg">{card.title}</h3>
+              <p className="mt-1 text-sm leading-5 text-slate-300">{card.description}</p>
             </div>
             <div className="hidden shrink-0 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.32em] text-slate-200 sm:block">
               High contrast
@@ -132,7 +133,7 @@ export default function ProductsCarousel() {
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black to-transparent" />
 
             <div className="group relative">
-              <div className="flex w-max gap-5 px-5 py-6 sm:gap-6 sm:px-8 [animation:carouselMarquee_34s_linear_infinite] group-hover:[animation-play-state:paused] motion-reduce:[animation:none]">
+              <div className="flex w-max gap-5 px-5 py-4 sm:gap-6 sm:px-8 [animation:carouselMarquee_34s_linear_infinite] group-hover:[animation-play-state:paused] motion-reduce:[animation:none]">
                 {marqueeCards.map((card, index) => (
                   <ShowcaseCard key={`${card.id}-${index}`} card={card} priority={index < 3} />
                 ))}
