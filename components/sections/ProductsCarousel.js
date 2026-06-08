@@ -47,6 +47,16 @@ const showcaseCards = [
     aspectClass: 'aspect-[16/9]',
     accentClass: 'from-orange-500/18 via-amber-500/08 to-transparent',
   },
+  {
+    id: 'succu-cactus-hut',
+    type: 'Landing page',
+    title: 'SUCCU & CACTUS HUT',
+    description: 'A boutique plant shop landing with bold product imagery.',
+    src: '/web_product/SUCCU & CACTUS HUT.png',
+    href: 'https://website-rosy-five-11.vercel.app',
+    aspectClass: 'aspect-[16/9]',
+    accentClass: 'from-emerald-400/18 via-emerald-300/08 to-transparent',
+  },
 ]
 
 const marqueeCards = [...showcaseCards, ...showcaseCards]
@@ -79,12 +89,9 @@ function ShowcaseCard({ card, priority }) {
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-          <div className="absolute inset-x-4 top-4 flex items-center justify-between gap-3">
+          <div className="absolute inset-x-4 top-4 flex items-center justify-start gap-3">
             <span className="rounded-full border border-white/10 bg-black/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.34em] text-slate-100/90 backdrop-blur-md">
               {card.type}
-            </span>
-            <span className={`rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] ${card.featured ? 'border border-emerald-300/30 bg-emerald-300/10 text-emerald-200' : 'border border-cyan-300/25 bg-cyan-300/10 text-cyan-200'}`}>
-              {card.featured ? 'Dashboard focus' : 'Landing screen'}
             </span>
           </div>
         </div>
@@ -143,7 +150,6 @@ export default function ProductsCarousel() {
         </div>
 
         <div className="mt-6 flex flex-col gap-3 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>Four live visuals, duplicated into a seamless loop for the panoramic presentation.</p>
           <p className="text-slate-500">Hover to pause, or let the banner drift like a showroom reel.</p>
         </div>
       </div>
