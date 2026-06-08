@@ -2,18 +2,18 @@
 
 import Image from 'next/image'
 import ScrollReveal from '@/components/ui/ScrollReveal'
+import SectionHeader from '@/components/ui/SectionHeader'
 
 const showcaseCards = [
   {
     id: 'pass-op-wine',
     type: 'Landing page',
     title: 'Pass OP Wine',
-    description: 'Minimal editorial storytelling with neon violet, cyan, and warm orange accents.',
+    description: 'Minimal editorial storytelling with neon emerald and warm orange accents.',
     src: '/web_product/pass-op-wine.png',
     href: 'https://pass-op-wine.vercel.app/',
-    widthClass: 'min-w-[280px] sm:min-w-[320px] lg:min-w-[340px]',
     aspectClass: 'aspect-[4/5]',
-    accentClass: 'from-violet-500/25 via-fuchsia-500/10 to-transparent',
+    accentClass: 'from-emerald-400/20 via-emerald-400/08 to-transparent',
   },
   {
     id: 'kit-drop',
@@ -30,12 +30,11 @@ const showcaseCards = [
     id: 'laundry-manager',
     type: 'Central dashboard',
     title: 'Laundry Manager',
-    description: 'The anchor screen: compact analytics, crisp widgets, and a polished control-room feel.',
+    description: 'The anchor screen: compact widgets and a polished control-room feel.',
     src: '/web_product/laundry-manager-rosy.png',
     href: 'https://laundry-manager-rosy.vercel.app/',
-    widthClass: 'min-w-[380px] sm:min-w-[480px] lg:min-w-[560px]',
     aspectClass: 'aspect-[16/10]',
-    accentClass: 'from-lime-400/20 via-emerald-400/10 to-transparent',
+    accentClass: 'from-emerald-300/18 via-emerald-400/08 to-transparent',
     featured: true,
   },
   {
@@ -45,21 +44,21 @@ const showcaseCards = [
     description: 'Clean rental-platform framing with strong contrast and a premium systemized layout.',
     src: '/web_product/rentivo-six.png',
     href: 'https://rentivo-six.vercel.app/',
-    widthClass: 'min-w-[280px] sm:min-w-[320px] lg:min-w-[340px]',
     aspectClass: 'aspect-[4/5]',
-    accentClass: 'from-orange-500/20 via-amber-500/10 to-transparent',
+    accentClass: 'from-orange-500/18 via-amber-500/08 to-transparent',
   },
 ]
 
 const marqueeCards = [...showcaseCards, ...showcaseCards]
 
 function ShowcaseCard({ card, priority }) {
+  const sizeClasses = card.featured ? 'w-full sm:min-w-[480px] lg:min-w-[560px]' : 'w-full sm:min-w-[320px] lg:min-w-[340px]'
   return (
     <a
       href={card.href}
       target="_blank"
       rel="noreferrer"
-      className={`group relative flex ${card.widthClass} ${card.aspectClass} shrink-0 overflow-hidden rounded-[1.65rem] border border-white/10 bg-slate-950/75 p-3 shadow-[0_18px_80px_rgba(2,6,23,0.72)] transition duration-500 hover:-translate-y-2 hover:scale-[1.01] hover:border-white/20`}
+      className={`group relative ${sizeClasses} ${card.aspectClass} shrink-0 overflow-hidden rounded-[1.65rem] border border-white/10 bg-slate-950/75 p-3 shadow-[0_18px_80px_rgba(2,6,23,0.72)] transition duration-500 hover:-translate-y-2 hover:scale-[1.01] hover:border-white/20`}
     >
       <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${card.accentClass}`} />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.04),transparent_24%)]" />
@@ -71,7 +70,7 @@ function ShowcaseCard({ card, priority }) {
             alt={card.title}
             fill
             priority={priority}
-            sizes={card.featured ? '(max-width: 1024px) 88vw, 44vw' : '(max-width: 1024px) 72vw, 26vw'}
+            sizes={card.featured ? '(max-width: 1024px) 100vw, 44vw' : '(max-width: 1024px) 100vw, 26vw'}
             className={`object-cover object-top transition duration-700 group-hover:scale-[1.05] ${card.featured ? 'brightness-[1.03] contrast-[1.02]' : 'brightness-[0.95] contrast-[1.05]'}`}
           />
 
@@ -80,30 +79,10 @@ function ShowcaseCard({ card, priority }) {
             <span className="rounded-full border border-white/10 bg-black/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.34em] text-slate-100/90 backdrop-blur-md">
               {card.type}
             </span>
-            <span className={`rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] ${card.featured ? 'border border-lime-300/30 bg-lime-300/10 text-lime-200' : 'border border-cyan-300/25 bg-cyan-300/10 text-cyan-200'}`}>
+            <span className={`rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.32em] ${card.featured ? 'border border-emerald-300/30 bg-emerald-300/10 text-emerald-200' : 'border border-cyan-300/25 bg-cyan-300/10 text-cyan-200'}`}>
               {card.featured ? 'Dashboard focus' : 'Landing screen'}
             </span>
           </div>
-
-          {card.featured && (
-            <div className="absolute inset-x-4 bottom-4 flex items-end justify-between gap-4">
-              <div className="max-w-[60%] rounded-2xl border border-white/10 bg-black/55 px-4 py-3 backdrop-blur-md">
-                <p className="text-[10px] uppercase tracking-[0.34em] text-lime-200/90">Live analytics</p>
-                <div className="mt-3 flex items-end gap-2">
-                  <span className="h-6 w-2 rounded-full bg-lime-300/80" />
-                  <span className="h-10 w-2 rounded-full bg-cyan-300/80" />
-                  <span className="h-8 w-2 rounded-full bg-violet-300/80" />
-                  <span className="h-12 w-2 rounded-full bg-emerald-300/80" />
-                  <span className="h-7 w-2 rounded-full bg-orange-300/80" />
-                </div>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-black/55 px-4 py-3 text-right backdrop-blur-md">
-                <p className="text-[10px] uppercase tracking-[0.34em] text-slate-300">System status</p>
-                <p className="mt-1 text-sm font-semibold text-white">92% efficiency</p>
-                <p className="text-xs text-slate-400">Realtime operations</p>
-              </div>
-            </div>
-          )}
         </div>
 
         <div className="border-t border-white/10 bg-black/70 px-4 py-4">
@@ -126,31 +105,19 @@ function ShowcaseCard({ card, priority }) {
 export default function ProductsCarousel() {
   return (
     <section id="products" aria-labelledby="products-heading" className="relative isolate overflow-hidden bg-black py-20 sm:py-24 lg:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.28),transparent_30%),radial-gradient(circle_at_70%_35%,rgba(34,211,238,0.18),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(163,230,53,0.12),transparent_28%),linear-gradient(180deg,rgba(7,8,14,0.96),rgba(0,0,0,1))]" />
-      <div className="absolute left-1/2 top-10 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-violet-500/20 blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.28),transparent_30%),radial-gradient(circle_at_70%_35%,rgba(34,211,238,0.18),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(163,230,53,0.12),transparent_28%),linear-gradient(180deg,rgba(7,8,14,0.96),rgba(0,0,0,1))]" />
+      <div className="absolute left-1/2 top-10 h-72 w-[42rem] -translate-x-1/2 rounded-full bg-emerald-400/14 blur-3xl" />
       <div className="absolute -right-24 top-24 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
       <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-lime-400/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-[96rem] px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-3xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.5em] text-cyan-300/80">Panoramic showcase</p>
-              <h2 id="products-heading" className="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Continuous dark-mode experiences, stitched into one cinematic banner.
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-                A wide-angle presentation of landing pages and a central application dashboard, framed with soft depth of field,
-                neon gradients, and a premium ambient glow.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3 text-[11px] font-semibold uppercase tracking-[0.34em] text-slate-300">
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md">Purple / cyan glow</span>
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md">Dashboard focus</span>
-              <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md">Continuous motion</span>
-            </div>
-          </div>
+          <SectionHeader
+            id="products-heading"
+            heading="Our Products"
+            highlight="Products"
+            description="A quick look at our live product work. Hover, swipe, or tap to explore each one."
+          />
         </ScrollReveal>
 
         <div className="mt-10 rounded-[2.25rem] border border-white/10 bg-white/5 p-3 shadow-[0_40px_140px_rgba(2,6,23,0.72)] backdrop-blur-xl sm:p-4">
