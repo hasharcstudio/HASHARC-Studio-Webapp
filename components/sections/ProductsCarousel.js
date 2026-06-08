@@ -52,7 +52,10 @@ const showcaseCards = [
 const marqueeCards = [...showcaseCards, ...showcaseCards]
 
 function ShowcaseCard({ card, priority }) {
-  const sizeClasses = card.featured ? 'w-full sm:min-w-[480px] lg:min-w-[560px]' : 'w-full sm:min-w-[320px] lg:min-w-[340px]'
+  // Use smaller fixed min-widths on phones so items are easier to identify
+  const sizeClasses = card.featured
+    ? 'min-w-[220px] sm:min-w-[480px] lg:min-w-[560px]'
+    : 'min-w-[160px] sm:min-w-[320px] lg:min-w-[340px]'
   return (
     <a
       href={card.href}
