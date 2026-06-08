@@ -52,7 +52,7 @@ const showcaseCards = [
     type: 'Landing page',
     title: 'SUCCU & CACTUS HUT',
     description: 'A boutique plant shop landing with bold product imagery.',
-    src: '/web_product/SUCCU & CACTUS HUT.png',
+    src: '/web_product/SUCCU_&_CACTUS_HUT.png',
     href: 'https://website-rosy-five-11.vercel.app',
     aspectClass: 'aspect-[16/9]',
     accentClass: 'from-emerald-400/18 via-emerald-300/08 to-transparent',
